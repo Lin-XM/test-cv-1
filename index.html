@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>简单的简历</title>
+  </head>
+  <body>
+    <style id="style"></style>
+    <!--第一步实现会动的字-->
+    <span id="demo"></span>
+    <div id="div1">
+      <style>
+        #div1 {
+          position: fixed;
+          right: 20px;
+          top: 20px;
+        }
+        #div1::before {
+          content: "";
+
+          display: block;
+          position: absolute;
+        }
+        #div1::after {
+          content: "";
+
+          display: block;
+          position: absolute;
+        }
+      </style>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
