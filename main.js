@@ -1,5 +1,5 @@
 //通过css选择器找到这个元素
-let html = document.querySelector("#demo");
+let demo = document.querySelector("#demo");
 let style = document.querySelector("#style")
 //因为中文会影响css，所以需要注释
 let string = `
@@ -7,8 +7,8 @@ let string = `
 *接下来添加样式，第一个样式为：*/
 #div1{
     border:1px solid red;
-    width:400px;
-    height:400px;
+    width:200px;
+    height:200px;
 }
 /*添加的第二个样式，就是将div变成圆形
 */
@@ -27,8 +27,8 @@ let string = `
 /*添加两个伪元素,将其变成黑白球，然后再利用渐变形成内白/黑
 */
 #div1::before{
-    width:200px;
-    height:200px;
+    width:100px;
+    height:100px;
     top:0;
     left:50%;
     transform: translateX(-50%);
@@ -37,8 +37,8 @@ let string = `
     background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 25%, rgba(0,0,0,1) 25%, rgba(0,0,0,1) 100%);
    }
 #div1::after{
-    width:200px;
-    height:200px;
+    width:100px;
+    height:100px;
     bottom:0;
     left:50%;
     transform: translateX(-50%);
@@ -50,11 +50,11 @@ let string = `
 let string2 = '';
 let n = 0;
 // 设置一个变量记录当前
-// html.innerHTML = string.substring(0,n);  //这里给出子字符串
+// demo.innerHTML = string.substring(0,n);  //这里给出子字符串
 // 由于setTimeout只能变化一次，所以使用setInterval；
 // setInterval(() => {
 //     n += 1;
-//     html.innerHTML = n;
+//     demo.innerHTML = n;
 // }, 1000);
 // 一个扩展写法,这个能过够更好的暂停
 let step = () => {
@@ -75,7 +75,7 @@ let step = () => {
         //string2 += string[n] === '\n' ? "<br>" : string[n];
         
         //同时陷入html和css
-        html.innerHTML = string2;
+        demo.innerHTML = string2;
         style.innerHTML = string.substring(0,n);
         if (n < string.length - 1) {
             //最大n=61进入
